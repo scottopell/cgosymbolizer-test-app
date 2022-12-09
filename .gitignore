@@ -1,0 +1,4 @@
+*.txt
+
+with_symbolizer
+without_symbolizer
