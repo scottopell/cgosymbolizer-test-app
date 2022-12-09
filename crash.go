@@ -1,7 +1,7 @@
 package main
 
 /*
-void crash_now(char *b);
+void crash_now();
 */
 import "C"
 
@@ -12,7 +12,7 @@ import (
 )
 
 func crash() {
-	C.crash_now(C.CString("some string"))
+	C.crash_now()
 }
 
 func main() {

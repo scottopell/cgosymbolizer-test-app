@@ -2,7 +2,16 @@
 
 typedef int (*myFuncDef)();
 
-void crash_now(char *b) {
+void indirectionTwo() {
     myFuncDef funcPtr = NULL;
-    fprintf(stderr, "Here: %s %d \n", b, funcPtr());
+    fprintf(stderr, "Here: %d \n", funcPtr());
+}
+
+
+void indirectionOne() {
+    indirectionTwo();
+}
+
+void crash_now() {
+    indirectionOne();
 }
