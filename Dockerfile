@@ -3,6 +3,7 @@ FROM golang:1.19 as build
 WORKDIR /go/src/app
 COPY . .
 
+ENV CGO_CFLAGS_ALLOW="-[fm].*"
 RUN go mod download
 RUN go build -o /go/bin/with_symbolizer -gcflags '-N -l'
 

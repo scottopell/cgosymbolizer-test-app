@@ -1,7 +1,8 @@
 package main
 
+// #cgo CFLAGS: -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fno-optimize-sibling-calls
 /*
-void crash_now();
+void entryPoint();
 */
 import "C"
 
@@ -12,7 +13,7 @@ import (
 )
 
 func crash() {
-	C.crash_now()
+	C.entryPoint()
 }
 
 func main() {

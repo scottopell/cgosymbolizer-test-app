@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+export CGO_CFLAGS_ALLOW="-[fm].*"
+
 # With symbolizer present
 go build -o with_symbolizer -gcflags '-N -l'
 sed -i 's/_ "github.com\/ianlancetaylor\/cgosymbolizer"/\/\/placeholder/' crash.go
