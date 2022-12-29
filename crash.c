@@ -2,13 +2,13 @@
 
 typedef int (*myFuncDef)();
 
-void indirectionTwo() {
+void __attribute__ ((noinline)) indirectionTwo() {
     myFuncDef funcPtr = NULL;
     fprintf(stderr, "Here: %d \n", funcPtr());
 }
 
 
-void indirectionOne() {
+void __attribute__ ((noinline)) indirectionOne() {
     indirectionTwo();
 }
 
